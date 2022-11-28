@@ -1,0 +1,35 @@
+/* content */
+h2 {
+    color: aqua;
+    font-size: 40px;
+}
+
+span {
+    color: red;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: chartreuse;
+}
+
+#frist-p {
+    color: blue;
+}
+
+.green {
+    color: green;
+}
+
+.spec {
+    font-style: italic;
+    font-size: 40px;
+}
+
+.fs18 {
+    font-size: 18px;
+}

@@ -1,0 +1,32 @@
+.box .spec em {
+    color: blue;
+}
+
+div.box p {
+    color: red;
+}
+
+h3.spec {
+    font-style: italic;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a:link {
+    color: blue;
+}
+
+a:visited {
+    color: burlywood;
+}
+
+a:hover {
+    background-color: gold;
+}
+
+a:active {
+    font-size: 50px;
+}
