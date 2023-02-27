@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            background-color: orange;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            perspective: 300px;
+            position: relative;
+        }
+
+        .box1 p {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+        }
+
+        /* 顶面 */
+        .box1 p:nth-child(1) {
+            background-color: red;
+            transform: translateZ(100px);
+        }
+
+        /* 背面 */
+        .box1 p:nth-child(2) {
+            background-color: yellow;
+            transform: rotateX(90deg) translateZ(100px);
+        }
+
+        /* 底面 */
+        .box1 p:nth-child(3) {
+            background-color: blue;
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+
+        /* 右侧面 */
+        .box1 p:nth-child(4) {
+            background-color: purple;
+            transform: rotateY(90deg) translateZ(100px);
+        }
+
+        /* 左侧面 */
+        .box1 p:nth-child(5) {
+            background-color: rgba(218, 233, 7, 0.486);
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+
+        /* 前面 */
+        .box1 p:nth-child(6) {
+            background-color: rgba(6, 156, 243, 0.1);
+            transform: rotateX(180deg) translateZ(100px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
+</body>
+
+</html>
