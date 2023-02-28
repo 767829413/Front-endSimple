@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 10px;
+            background-color: orange;
+            border: 1px solid #000;
+        }
+
+        p {
+            width: 200px;
+            height: 200px;
+        }
+
+        .box1 {
+            transition: width 5s linear 0s;
+        }
+
+        .box1:hover {
+            width: 800px;
+        }
+
+        .box2 p {
+            position: relative;
+            transition: left 1s linear 0s;
+            left: 0;
+        }
+
+        .box2:hover p {
+            left: 500px;
+            background-color: orange;
+        }
+
+        .box3 {
+            background-color: red;
+            transition: background-color 2s linear 0s;
+        }
+
+        .box3:hover {
+            background-color: green;
+        }
+
+        .box4 {
+            border-radius: 0;
+            transition: border-radius 2s linear 0s;
+        }
+
+        .box4:hover {
+            border-radius: 50%;
+        }
+
+        .box5 {
+            background-color: purple;
+            transition: transform 0.5s linear 0s;
+        }
+
+        .box5:hover {
+            transform: scale(1.5) rotate(-300deg);
+        }
+
+        .box6 {
+            perspective: 300px;
+            background-color: white;
+        }
+
+        .box6 p {
+            background-color: gold;
+            transition: transform 1s linear 0s;
+        }
+
+        .box6:hover p {
+            transform: rotateX(360deg) rotateY(360deg);
+        }
+
+        .box7 {
+            background-color: rgb(34, 6, 136);
+            border-radius: 0;
+            transition: all 1s linear 0s;
+        }
+
+        .box7:hover {
+            width: 400px;
+            height: 160px;
+            background-color: rgb(57, 240, 12);
+            border-radius: 50%;
+        }
+
+        .box8 {
+            width: 100%;
+            background-color: #fff;
+        }
+
+        .box8 p {
+            width: 100px;
+            height: 60px;
+            background-color: #e60bee;
+            margin-bottom: 10px;
+            position: relative;
+            left: 0;
+            transition: left 1s linear 0s;
+            text-align: center;
+            line-height: 60px;
+        }
+
+        .box8 p:nth-child(2) {
+            transition-timing-function: ease;
+        }
+
+        .box8 p:nth-child(3) {
+            transition-timing-function: ease-in;
+        }
+
+        .box8 p:nth-child(4) {
+            transition-timing-function: ease-out;
+        }
+
+        .box8 p:nth-child(5) {
+            transition-timing-function: ease-in-out;
+        }
+
+        .box8 p:nth-child(6) {
+            /* 网站 https://cubic-bezier.com/ 可以生成贝塞尔曲线,自定义动画缓动参数 */
+            transition: left 1s cubic-bezier(.22,-0.73,.72,1.71) 0s;
+        }
+
+        .box8:hover p {
+            left: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2">
+        <p></p>
+    </div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+    <div class="box6">
+        <p></p>
+    </div>
+
+    <div class="box7"></div>
+    <div class="box8">
+        <p>linear</p>
+        <p>ease</p>
+        <p>ease-in</p>
+        <p>ease-out</p>
+        <p>ease-in-out</p>
+        <p>Bessel Curve</p>
+    </div>
+</body>
+
+</html>
