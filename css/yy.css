@@ -1,8 +1,12 @@
 .site-head {
+    /* 限制最小宽度: min-width */
+    min-width: 1152px;
     height: 150px;
 }
 
 .site-head .topbar {
+    /* 限制最小宽度: min-width */
+    min-width: 1152px;
     height: 32px;
     background-color: #2A2A2A;
     line-height: 32px;
@@ -64,7 +68,68 @@
     left: 3px;
 }
 
+.site-head .topbar .shortcut-links>ul>li.have-menu .menu {
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    /* 防止遮盖 */
+    z-index: 9999;
+    display: none;
+    background: #FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20);
+    padding: 8px;
+}
+
+.site-head .topbar .shortcut-links>ul>li.have-menu .sq-menu {
+    width: 113px;
+}
+
+.site-head .topbar .shortcut-links>ul>li.have-menu .sc-menu {
+    width: 68px;
+}
+
+.site-head .topbar .shortcut-links>ul>li.have-menu .jdms-menu {
+    width: 56px;
+}
+
+.site-head .topbar .shortcut-links>ul>li.have-menu:hover .menu {
+    display: block;
+}
+
+.site-head .topbar .shortcut-links>ul>li.have-menu .menu .menu-list li {
+    height: 18px;
+    line-height: 18px;
+}
+
+.site-head .topbar .shortcut-links>ul>li.have-menu .menu .menu-list a {
+    font-size: 12px;
+    color: #1C1F21;
+    line-height: 18px;
+}
+
+.site-head .topbar .shortcut-links>ul>li.have-menu .menu .menu-list a:hover {
+    color: orange;
+}
+
+.site-head .topbar .topbar-r {
+    float: right;
+    width: 225px;
+
+}
+
+.site-head .topbar .topbar-r a,
+.site-head .topbar .topbar-r span {
+    font-size: 12px;
+    margin-right: 12px;
+}
+
+.site-head .topbar .topbar-r a:last-child {
+    margin-right: 0;
+}
+
 .site-head .main-nav {
+    /* 限制最小宽度: min-width */
+    min-width: 1152px;
     height: 40px;
     background-color: #20BD9A;
 }
@@ -101,6 +166,46 @@
 
 .site-head .main-nav ul li.have-menu:hover::before {
     transform: rotate(180deg);
+}
+
+.site-head .main-nav ul li.have-menu .menu {
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    /* 防止遮盖 */
+    z-index: 9999;
+    /* display: none; */
+    background: #FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20);
+    padding: 8px;
+    display: none;
+}
+
+.site-head .main-nav ul li:hover.have-menu .menu {
+    display: block;
+}
+
+.site-head .main-nav ul li.have-menu .jjzyx-menu {
+    width: 152px;
+}
+
+.site-head .main-nav ul li.have-menu .gty-menu {
+    width: 98px;
+}
+
+.site-head .main-nav ul li.have-menu .ddwl-menu {
+    width: 155px;
+}
+
+.site-head .main-nav ul li.have-menu .menu dl dd a {
+    font-size: 12px;
+    color: #1C1F21;
+    text-align: justify;
+    line-height: 18px;
+}
+
+.site-head .main-nav ul li.have-menu .menu dl dd a:hover {
+    color: orange;
 }
 
 .site-head .header-con {
@@ -140,4 +245,157 @@
     width: 32px;
     height: 30px;
     background-color: #20BD9A;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 30px;
+    /* 左上,右上,右下,左下 */
+    border-radius: 0 4px 4px 0;
+}
+
+.banner {
+    position: relative;
+}
+
+.banner img {
+    width: 100%;
+    /* 限制最小宽度: min-width */
+    min-width: 1152px;
+    /* 图片可能和盒子底部产生一些缝隙,可以使用 */
+    /* 可以使缝隙消失,表示垂直居中 */
+    vertical-align: middle;
+}
+
+.banner .center-wrap {
+    /* 只要有压盖可以首选绝对定位 */
+    position: absolute;
+    width: 1152px;
+    height: 100px;
+    left: 50%;
+    top: 0;
+    margin-left: -576px;
+    /* 这里100%的高度不能省略,省略了会导致高度0 */
+    /* 子盒子设置高度设置等分百分比就会失效 */
+    height: 100%;
+}
+
+.banner .center-wrap .banner-nav {
+    /* 这里100%的高度不能省略,省略了会导致高度0 */
+    /* 子盒子设置高度设置等分百分比就会失效 */
+    height: 100%;
+}
+
+.banner .center-wrap .banner-nav>ul {
+    /* 这里100%的高度不能省略,省略了会导致高度0 */
+    /* 子盒子设置高度设置等分百分比就会失效 */
+    height: 100%;
+}
+
+.banner .center-wrap .banner-nav>ul>li {
+    height: 16.66%;
+    width: 296px;
+    background-color: rgba(0, 0, 0, .4);
+    border-bottom: 1px solid #9E9E9E;
+    /* box-sizing:border-box 属性的作用是让height属性值等于盒子总高 */
+    /* 用于盒子高度为百分数时,盒子有边框,让边框涵盖在盒子高度里 */
+    box-sizing: border-box;
+}
+
+.banner .center-wrap .banner-nav>ul>li:last-child {
+    border-bottom: none;
+}
+
+.banner .center-wrap .banner-nav ul li:hover {
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.banner .center-wrap .btn {
+    top: 50%;
+    margin-top: -22px;
+    position: absolute;
+    width: 28px;
+    height: 44px;
+    background-image: url(../images/icons.png);
+    background-repeat: no-repeat;
+}
+
+.banner .center-wrap .left-btn {
+    background-position: -21px -94px;
+    left: -38px;
+}
+
+.banner .center-wrap .left-btn:hover {
+    /* 透明度 */
+    opacity: 0.6;
+}
+
+.banner .center-wrap .right-btn {
+    background-position: -21px -29px;
+    right: -38px;
+}
+
+.banner .center-wrap .right-btn:hover {
+    /* 透明度 */
+    opacity: 0.6;
+}
+
+.banner .center-wrap .banner-nav>ul>li {
+    position: relative;
+}
+
+.banner .center-wrap .banner-nav>ul>li dl {
+    position: absolute;
+    height: 48px;
+    top: 50%;
+    margin-top: -24px;
+    left: 42px;
+    color: #FFFFFF;
+}
+
+.banner .center-wrap .banner-nav>ul>li dl dt {
+    font-size: 18px;
+    height: 26px;
+    line-height: 26px;
+}
+
+.banner .center-wrap .banner-nav>ul>li::before {
+    content: '';
+    position: absolute;
+    background-image: url(../images/icons.png);
+    background-repeat: no-repeat;
+    top: 50%;
+    margin-top: -12px;
+    width: 24px;
+    height: 24px;
+    left: 10px;
+}
+
+.banner .center-wrap .banner-nav>ul>li.hot-start::before {
+    background-position: -29px -399px;
+}
+
+.banner .center-wrap .banner-nav>ul>li.hk-inner::before {
+    background-position: -28px -217px;
+}
+
+.banner .center-wrap .banner-nav>ul>li.jp-out::before {
+    background-position: -29px -399px;
+}
+
+.banner .center-wrap .banner-nav>ul>li.sa-out::before {
+    background-position: -29px -399px;
+}
+
+.banner .center-wrap .banner-nav>ul>li.eu-out::before {
+    background-position: -29px -399px;
+}
+
+.banner .center-wrap .banner-nav>ul>li.an-out::before {
+    background-position: -29px -399px;
+}
+
+.banner .center-wrap .banner-nav>ul>li dl dd a {
+    color: #FFFFFF;
+    font-size: 14px;
+    height: 22px;
+    line-height: 22px;
 }
