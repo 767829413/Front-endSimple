@@ -357,6 +357,12 @@
     line-height: 26px;
 }
 
+.banner .center-wrap .banner-nav>ul>li dl dd {
+    font-size: 14px;
+    height: 22px;
+    line-height: 22px;
+}
+
 .banner .center-wrap .banner-nav>ul>li::before {
     content: '';
     position: absolute;
@@ -378,24 +384,399 @@
 }
 
 .banner .center-wrap .banner-nav>ul>li.jp-out::before {
-    background-position: -29px -399px;
+    background-position: -25px -171px;
 }
 
 .banner .center-wrap .banner-nav>ul>li.sa-out::before {
-    background-position: -29px -399px;
+    background-position: -28px -262px;
 }
 
 .banner .center-wrap .banner-nav>ul>li.eu-out::before {
-    background-position: -29px -399px;
+    background-position: -29px -351px;
 }
 
 .banner .center-wrap .banner-nav>ul>li.an-out::before {
-    background-position: -29px -399px;
+    background-position: -28px -305px;
 }
 
-.banner .center-wrap .banner-nav>ul>li dl dd a {
+.banner .center-wrap .banner-nav>ul>li.current {
+    background-color: rgba(0, 0, 0, .63);
+}
+
+.banner .center-wrap .banner-nav .menus-box .menu {
+    /* 让menu隐藏 */
+    display: none;
+    position: absolute;
+    left: 296px;
+    top: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .63);
     color: #FFFFFF;
+    padding: 16px;
+
+    /* 加上box-sizing属性之后，height: 100%; 就是盒子的总高度了 */
+    /* 就不需要减padding了，因为百分比怎么减padding呀？ */
+    box-sizing: border-box;
+    z-index: 99999;
+}
+
+/* 有current类名的menu是显示的 */
+.banner .center-wrap .banner-nav .menus-box .menu.current {
+    display: block;
+}
+
+.banner .center-wrap .banner-nav .menus-box .menu a {
+    color: white;
+}
+
+.banner .center-wrap .banner-nav .menus-box .menu dl {
+    margin-bottom: 16px;
+}
+
+.banner .center-wrap .banner-nav .menus-box .menu dl dt {
+    line-height: 24px;
+    font-size: 16px;
+}
+
+.banner .center-wrap .banner-nav .menus-box .menu dl dd {
+    line-height: 22px;
     font-size: 14px;
+}
+
+.hot-ads {
+    margin: 32px 0;
+}
+
+.hot-ads .center-wrap ul li {
+    float: left;
+    width: 264px;
+    height: 110px;
+    margin-right: 32px;
+}
+
+.hot-ads .center-wrap ul li:last-child {
+    margin-right: 0;
+}
+
+.content-part h2 {
+    color: #1C1F21;
+    font-size: 36px;
+    font-weight: bold;
+    float: left;
+}
+
+.content-part em {
+    color: #1C1F21;
+    font-size: 12px;
+    float: left;
+    left: 12px;
+    top: 26px;
+    position: relative;
+}
+
+.content-part .center-wrap .hd nav {
+    float: right;
+    width: 500px;
+}
+
+.content-part .center-wrap .hd nav ul {
+    padding-top: 16px;
+}
+
+.content-part .center-wrap .hd nav ul li {
+    float: left;
+    margin-right: 16px;
+    font-size: 14px;
+}
+
+.content-part .center-wrap .hd nav ul li:last-child {
+    margin-right: 0;
+}
+
+.content-part .center-wrap .hd nav ul li a {
+    color: rgba(0, 0, 0, 0.85);
+}
+
+.content-part .center-wrap .hd nav ul li.current {
+    border-bottom: 4px solid #20BD9A;
+    padding-bottom: 2px;
+}
+
+.content-part .center-wrap .hd nav ul li.current a {
+    color: #20BD9A;
+}
+
+/* dfdfd */
+
+
+.content-part .center-wrap .bd .more-grid {
+    position: relative;
+    width: 264px;
+    height: 270px;
+    background-image: linear-gradient(180deg, #34E3BC 0%, #15AF7A 98%);
+    padding-top: 46px;
+    box-sizing: border-box;
+}
+
+.content-part .center-wrap .bd .more-grid p {
+    font-size: 14px;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 22px;
+}
+
+.content-part .center-wrap .bd .more-grid .iconfont {
+    position: absolute;
+    font-size: 48px;
+    color: #FFFFFF;
+    left: 108px;
+    top: 118px;
+    width: 48px;
+    height: 48px;
+}
+
+.content-part .center-wrap .bd .more-grid ul {
+    position: absolute;
+    left: 14px;
+    top: 202px;
+}
+
+.content-part .center-wrap .bd .more-grid ul li {
+    float: left;
+    border-right: 1px solid #FFFFFF;
+    padding: 0 13px;
     height: 22px;
     line-height: 22px;
+    color: #FFFFFF;
+}
+
+.content-part .center-wrap .bd .more-grid ul li:last-child {
+    border-right: none;
+}
+
+/* dfdfd */
+
+.xxsw {
+    background: #F7F7F7;
+    height: 698px;
+    padding-top: 40px;
+}
+
+.xxsw .center-wrap .hd {
+    margin-bottom: 32px;
+}
+
+.xxsw .center-wrap ul li {
+    float: left;
+    width: 264px;
+    height: 270px;
+    margin-right: 32px;
+    background: #FFFFFF;
+    margin-bottom: 32px;
+}
+
+
+
+.xxsw .center-wrap ul li:nth-child(4n) {
+    margin-right: 0;
+}
+
+.xxsw .center-wrap ul li .wordbox {
+    /* 上,右,下,左 顺时针 */
+    padding: 20px 14px 22px 14px;
+    font-size: 14px;
+    color: #1C1F21;
+}
+
+.xxsw .center-wrap ul li:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.20);
+}
+
+.jjzyx {
+    height: 698px;
+    padding-top: 40px;
+}
+
+.jjzyx .center-wrap .hd nav {
+    width: 476px;
+}
+
+.jjzyx .center-wrap .bd {
+    padding-top: 32px;
+}
+
+.jjzyx .center-wrap .bd>ul>li {
+    float: left;
+    margin-right: 32px;
+    margin-bottom: 32px;
+    background: #FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+}
+
+.jjzyx .center-wrap .bd>ul>li:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.20);
+}
+
+.jjzyx .center-wrap .bd>ul>li:nth-child(3),
+.jjzyx .center-wrap .bd>ul>li:nth-child(7) {
+    margin-right: 0;
+}
+
+.jjzyx .center-wrap .bd>ul>li.big-grid {
+    width: 560px;
+    height: 270px;
+    position: relative;
+}
+
+.jjzyx .center-wrap .bd>ul>li .tag {
+    position: absolute;
+    width: 74px;
+    height: 40px;
+    color: #FFFFFF;
+    background-color: rgba(0, 0, 0, 0.55);
+    bottom: 103px;
+    left: 0;
+    text-align: center;
+    line-height: 40px;
+    font-size: 14px;
+}
+
+.jjzyx .center-wrap .bd>ul>li.big-grid .info {
+    position: absolute;
+    width: 560px;
+    height: 103px;
+    color: #FFFFFF;
+    background-color: rgba(0, 0, 0, 0.55);
+    bottom: 0;
+    left: 0;
+    padding: 30px 26px;
+    box-sizing: border-box;
+    line-height: 22px;
+}
+
+.jjzyx .center-wrap .bd>ul>li.pro-grid {
+    width: 264px;
+    height: 270px;
+}
+
+.jjzyx .center-wrap .bd>ul>li.pro-grid .picbox {
+    position: relative;
+    height: 184px;
+}
+
+.jjzyx .center-wrap .bd>ul>li.pro-grid .picbox .tag {
+    bottom: 0;
+}
+
+.jjzyx .center-wrap .bd>ul>li.pro-grid .wordbox {
+    padding: 20px 14px 22px 14px;
+    font-size: 14px;
+    color: #1C1F21;
+}
+
+.ddwl {
+    padding-top: 40px;
+    height: 546px;
+    background: #F7F7F7;
+}
+
+.ddwl .center-wrap .hd nav {
+    width: 350px;
+}
+
+.ddwl .center-wrap .bd {
+    padding-top: 32px;
+}
+
+.ddwl .center-wrap .bd .col {
+    width: 364px;
+    height: 420px;
+    float: left;
+    margin-right: 30px;
+}
+
+.ddwl .center-wrap .bd .col:last-child {
+    margin-right: 0;
+}
+
+.ddwl .center-wrap .bd .col>a .big-pic-box {
+    width: 364px;
+    height: 270px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.ddwl .center-wrap .bd .col>a .big-pic-box .info {
+    position: absolute;
+    width: 364px;
+    height: 104px;
+    background-color: rgba(0, 0, 0, .5);
+    left: 0;
+    bottom: 0;
+    padding: 21px 17px 0;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+.ddwl .center-wrap .bd .col>a .big-pic-box .info .bottom {
+    padding-top: 4px;
+}
+
+.ddwl .center-wrap .bd .col>a .big-pic-box .info .bottom .tag {
+    float: left;
+}
+
+.ddwl .center-wrap .bd .col>a .big-pic-box .info .bottom .price {
+    float: right;
+}
+
+.ddwl .center-wrap .bd .col>a .big-pic-box .info .bottom .price strong {
+    color: #36DFBA;
+}
+
+.ddwl .center-wrap .bd .col>a .grid-box {
+    width: 364px;
+    height: 120px;
+    margin-bottom: 30px;
+    background: #FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+}
+
+.ddwl .center-wrap .bd .col>a .grid-box:hover,
+.ddwl .center-wrap .bd .col>a .more-grid:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20);
+}
+
+.ddwl .center-wrap .bd .col>a .grid-box .picbox {
+    float: left;
+    width: 120px;
+    height: 120px;
+}
+
+.ddwl .center-wrap .bd .col>a .grid-box .wordbox {
+    width: 244px;
+    height: 120px;
+    float: left;
+    padding: 26px 18px 28px 18px;
+    font-size: 14px;
+    color: #000000;
+    line-height: 22px;
+    box-sizing: border-box;
+}
+
+.ddwl .center-wrap .bd .col>a .more-grid {
+    width: 364px;
+    height: 270px;
+    background-image: linear-gradient(180deg, #FF6374 1%, #FF7368 98%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+}
+
+.ddwl .center-wrap .bd .col>a .more-grid span {
+    left: 158px;
+}
+
+.ddwl .center-wrap .bd .col>a .more-grid ul li {
+    font-size: 13px;
+    padding: 0px 11px;
 }
