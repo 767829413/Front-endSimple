@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">按我添加</button>
+    <ul id="list">
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+    </ul>
+
+    <script>
+        var list = document.getElementById("list");
+        var btn = document.getElementById("btn");
+
+        list.onclick = function (e) {
+            // e.target 用户真正点击的元素  e.currentTarget 表示本身元素
+            // e.currentTarget相当于this
+            e.target.style.color = "red";
+            // e.currentTarget.style.backgroundColor = "orange";
+            // this.style.backgroundColor = "orange";
+        }
+
+        btn.onclick = function () {
+            var newLi = document.createElement('li');
+            newLi.innerText = '列表项------';
+            list.appendChild(newLi);
+        }
+    </script>
+</body>
+
+</html>

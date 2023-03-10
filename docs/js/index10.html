@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            position: absolute;
+            left: 200px;
+            top: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input id="field1" type="text"><br>
+    <h1 id="info1"></h1><br>
+    <input id="field2" type="text">
+    <h1 id="info2"></h1>
+
+    <div id="box"></div>
+
+    <script>
+        var field1 = document.getElementById('field1');
+        var info1 = document.getElementById('info1');
+        var field2 = document.getElementById('field2');
+        var info2 = document.getElementById('info2');
+        var box = document.getElementById('box');
+
+        field1.onkeypress = function (e) {
+            info1.innerText = '输入的字符码是: ' + e.charCode;
+        }
+
+        field2.onkeydown = function (e) {
+            info2.innerText = '输入的键码是: ' + e.keyCode;
+        }
+        var bleft = 200;
+        var btop = 200;
+        document.onkeydown = function (e) {
+            switch (e.keyCode) {
+                case 38://上
+                    var tmp = btop - 10;
+                    btop = tmp < 0 ? 0 : tmp;
+                    break;
+                case 40://下
+                    btop += 10;
+                    break;
+                case 37://左
+                    var tmp = bleft - 10;
+                    bleft = tmp < 0 ? 0 : tmp;
+                    break;
+                case 39://右
+                    bleft += 10;
+                    break;
+            }
+            box.style.top = btop + 'px';
+            box.style.left = bleft + 'px';
+        }
+    </script>
+</body>
+
+</html>

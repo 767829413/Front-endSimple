@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #model {
+            width: 400px;
+            height: 140px;
+            background-color: #333;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -200px;
+            margin-top: -70px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">按就弹出层</button>
+    <div id="model"></div>
+
+    <script>
+        var btn = document.getElementById("btn");
+        var model = document.getElementById("model");
+
+        btn.onclick = function (e) {
+            e.stopPropagation();
+            model.style.display = "block";
+        };
+        document.onclick = function () {
+            model.style.display = "none";
+        };
+        model.onclick = function (e) {
+            e.stopPropagation();
+        };
+    </script>
+</body>
+
+</html>

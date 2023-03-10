@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="myform" action="">
+        <p>
+            Name:
+            <input type="text" name="nameF">
+        </p>
+        <p>
+            Age:
+            <input type="text" name="ageF">
+        </p>
+        <input type="submit">
+        <input type="reset">
+    </form>
+
+    <script>
+        var myform = document.getElementById("myform");
+
+        myform.nameF.oninput = function () {
+            console.log('oninput');
+        };
+
+        myform.nameF.onchange = function () {
+            console.log('onchange');
+        };
+
+        myform.nameF.onfocus = function () {
+            console.log('onfocus');
+        };
+
+        myform.nameF.onblur = function () {
+            console.log('onblur');
+        };
+
+        myform.onsubmit = function () {
+            alert('onsubmit');
+        };
+
+        myform.onreset = function () {
+            alert('onreset');
+        };
+    </script>
+
+    </script>
+</body>
+
+</html>
