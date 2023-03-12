@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .content-part {
+            width: 1000px;
+            margin: 0px auto;
+            margin-bottom: 30px;
+            background-color: goldenrod;
+            font-size: 50px;
+        }
+
+        .floornav {
+            position: fixed;
+            padding: 10px;
+            right: 20px;
+            width: 52px;
+            height: 160px;
+            background-color: aqua;
+            top: 50%;
+            margin-top: -80px;
+        }
+
+        .floornav ul {
+            list-style: none;
+        }
+
+        .floornav ul li {
+            width: 52px;
+            height: 30px;
+            font-size: 26px;
+            line-height: 30px;
+            cursor: pointer;
+        }
+
+        .floornav ul li.current {
+            background: purple;
+            color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="floornav">
+        <ul id="list">
+            <li class="current" data-n="科技">科技</li>
+            <li data-n="体育">体育</li>
+            <li data-n="新闻">新闻</li>
+            <li data-n="娱乐">娱乐</li>
+            <li data-n="视频">视频</li>
+        </ul>
+    </nav>
+    <section class="content-part" style="height: 674px;" data-n="科技">
+        科技栏目
+    </section>
+
+    <section class="content-part" style="height: 567px;" data-n="体育">
+        体育栏目
+    </section>
+
+    <section class="content-part" style="height: 739px;" data-n="新闻">
+        新闻栏目
+    </section>
+
+    <section class="content-part" style="height: 574px;" data-n="娱乐">
+        娱乐栏目
+    </section>
+
+    <section class="content-part" style="height: 1294px;" data-n="视频">
+        视频栏目
+    </section>
+
+    <script>
+        var list = document.getElementById("list");
+        var contentParts = document.querySelectorAll('.content-part');
+        var lis = document.querySelectorAll('#list li');
+
+        list.onclick = function (e) {
+            if (e.target.tagName.toLowerCase() == 'li') {
+                var idxN = e.target.getAttribute('data-n');
+
+                var contentPart = document.querySelector('.content-part[data-n=' + idxN + ']');
+
+                document.documentElement.scrollTop = contentPart.offsetTop;
+            }
+        }
+
+        var offsetTops = [];
+
+
+        for (var i = 0; i < contentParts.length; i++) {
+            offsetTops.push(contentParts[i].offsetTop);
+        }
+        offsetTops.push(Infinity);
+
+        console.log(offsetTops);
+        var nowIdx = -1;
+        window.onscroll = function () {
+            var scrollTop = document.documentElement.scrollTop;
+            for (var i = 0; i < offsetTops.length; i++) {
+                if (scrollTop >= offsetTops[i] && scrollTop < offsetTops[i + 1]) {
+                    break;
+                }
+            }
+            if (nowIdx != i) {
+                console.log(i);
+                nowIdx = i;
+                for (var j = 0; j < lis.length; j++) {
+                    if (j == i) {
+                        lis[j].className = 'current';
+                    } else {
+                        lis[j].className = '';
+                    }
+                }
+            }
+
+        }
+    </script>
+</body>
+
+</html>

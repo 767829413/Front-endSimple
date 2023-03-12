@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 5000px;
+            background-image: linear-gradient(to bottom, blue, red, yellow);
+        }
+
+        .backtotop {
+            width: 60px;
+            height: 60px;
+            position: fixed;
+            background-color: rgba(255, 255, 255, .6);
+            bottom: 100px;
+            right: 100px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="backtotop" class="backtotop">返回顶部</div>
+
+    <script>
+        var backtotop = document.getElementById("backtotop");
+
+        var timer = null;
+        backtotop.onclick = function () {
+            if (timer != null) {
+                clearInterval(timer);
+            }
+            timer = setInterval(function () {
+                document.documentElement.scrollTop -= 100;
+                if (document.documentElement.scrollTop == 0) {
+                    clearInterval(timer);
+                }
+            }, 20);
+        }
+    </script>
+</body>
+
+</html>
