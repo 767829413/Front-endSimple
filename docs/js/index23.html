@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #carousel {
+            width: 650px;
+            height: 360px;
+            margin: 50px auto;
+            border: 1px solid black;
+            box-sizing: border-box;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #carousel ul {
+            list-style: none;
+            width: 4000px;
+            position: relative;
+            left: 0;
+            transition: left .4s ease 0s;
+        }
+
+        #carousel ul li {
+            float: left;
+        }
+
+        #carousel .btn {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: rgb(25, 0, 255);
+            border-radius: 50%;
+            top: 50%;
+            margin-top: -25px;
+        }
+
+        #carousel #leftbtn {
+            left: 20px;
+        }
+
+        #carousel #rightbtn {
+            right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="carousel">
+        <ul id="bc">
+            <li>
+                <a href="javascrip:;"><img src="../../images/0.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="javascrip:;"><img src="../../images/1.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="javascrip:;"><img src="../../images/2.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="javascrip:;"><img src="../../images/3.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="javascrip:;"><img src="../../images/4.jpg" alt=""></a>
+            </li>
+        </ul>
+        <a href="javascrip:;" id="leftbtn" class="btn"></a>
+        <a href="javascrip:;" id="rightbtn" class="btn"></a>
+
+        <script>
+            var leftbtn = document.getElementById('leftbtn');
+            var rightbtn = document.getElementById('rightbtn');
+            var bc = document.getElementById('bc');
+            var fristLi = bc.firstElementChild.cloneNode(true);
+            bc.appendChild(fristLi);
+
+            var idx = 0;
+            var edx = 5;
+
+            var lock = true;
+
+            leftbtn.onclick = function () {
+                if (!lock) {
+                    return;
+                }
+                lock = false;
+                if (idx == 0) {
+                    bc.style.transition = 'none';
+                    bc.style.left = -(edx * 650) + 'px';
+                    setTimeout(function () {
+                        bc.style.transition = 'left .4s ease 0s';
+                        idx = edx - 1;
+                        bc.style.left = -(idx * 650) + 'px';
+                    }, 0);
+                } else {
+                    idx -= 1;
+                    bc.style.left = (-idx * 650) + 'px';
+                }
+                setTimeout(function () {
+                    lock = true;
+                }, 400);
+            }
+
+            rightbtn.onclick = function () {
+                if (!lock) {
+                    return;
+                }
+                lock = false;
+                bc.style.transition = 'left .4s ease 0s';
+                idx += 1;
+                if (idx >= edx) {
+                    setTimeout(function () {
+                        idx = 0;
+                        bc.style.left = 0;
+                        bc.style.transition = 'none';
+                    }, 400);
+                }
+                bc.style.left = (-idx * 650) + 'px';
+
+                setTimeout(function () {
+                    lock = true;
+                }, 400);
+            }
+        </script>
+
+
+    </div>
+</body>
+
+</html>

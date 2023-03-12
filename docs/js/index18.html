@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="info">0</h1>
+    <button id="btn1">开始计数</button>
+    <button id="btn2">停止计数</button>
+    <button id="btn3">清零</button>
+    <script>
+        var btn1 = document.getElementById('btn1');
+        var btn2 = document.getElementById('btn2');
+        var btn3 = document.getElementById('btn3');
+        var info = document.getElementById('info');
+        var a = 0;
+
+        // setInterval(function (x, y) {
+        //     a++;
+        //     console.log(a, x, y);
+        // }, 1000, 555, 'sddsdsd');
+
+        var fn = function (x, y) {
+            ++a
+            info.innerText = a;
+        };
+
+        var count = null;
+        btn1.onclick = function () {
+            if (count != null) {
+                clearInterval(count);
+            }
+            count = setInterval(fn, 500, 555, 'sddsdsd');
+        };
+
+
+        btn2.onclick = function () {
+            if (count != null) {
+                clearInterval(count);
+            }
+        };
+
+        btn3.onclick = function () {
+            if (count != null) {
+                clearInterval(count);
+            }
+            a = 0;
+            info.innerText = a;
+        };
+    </script>
+</body>
+
+</html>
