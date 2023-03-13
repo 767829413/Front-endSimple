@@ -5,74 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        #box1 {
-            width: 202px;
-            height: 202px;
-            border: 1px solid black;
-            padding: 50px;
-        }
-
-        #box2 {
-            width: 100px;
-            height: 100px;
-            border: 1px solid black;
-            padding: 50px;
-        }
-
-        #box3 {
-            width: 100px;
-            height: 100px;
-            border: 1px solid black;
-        }
-    </style>
 </head>
 
 <body>
-    <div id="box1">
-        <div id="box2">
-            <div id="box3">
-
-            </div>
-        </div>
-    </div>
-
     <script>
-        var box1 = document.getElementById("box1");
-        var box2 = document.getElementById("box2");
-        var box3 = document.getElementById("box3");
+        function People(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+            // this.sayHello = function () {
+            //     console.log('我的名字是' + this.name + ',今年' + this.age + '岁' + ',是一个' + this.sex);
+            // };
+        }
+        // 把方法写在原型上
+        People.prototype.sayHello = function () {
+            console.log('我的名字是' + this.name + ',今年' + this.age + '岁' + ',是一个' + this.sex);
+        }
 
-        box1.onclick = function () {
-            console.log('onclick box1 clicked');
-        };
+        var xiaoming = new People('xiaoming', 12, '男生');
+        var xiaohong = new People('xiaohong', 15, '女生');
+        console.log(xiaoming.__proto__.__proto__ === Object.prototype);
+        console.log(Object.prototype.__proto__);
+        console.log(xiaoming.toString());
+        console.log(Object.prototype.hasOwnProperty('hasOwnProperty'));
+        console.log(Object.prototype.hasOwnProperty('toString'));
 
-        box2.onclick = function () {
-            console.log('onclick box2 clicked');
-        };
+        console.log('--------------------------------');
 
-        box3.onclick = function () {
-            console.log('onclick box3 clicked');
-        };
+        var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        console.log(arr.__proto__ === Array.prototype);
+        console.log(arr.__proto__.__proto__ === Object.prototype);
+        console.log(Array.__proto__.__proto__ === Object.prototype);
 
-        box1.addEventListener('click', function () {
-            console.log('box1 clicked capture addEventListener');
-        }, true);
-        box2.addEventListener('click', function () {
-            console.log('box2 clicked capture addEventListener');
-        }, true);
-        box3.addEventListener('click', function () {
-            console.log('box3 clicked capture addEventListener');
-        }, true);
-
-        box1.addEventListener('click', function () {
-            console.log('box1 clicked bubbling addEventListener');
-        }, false);
-        box2.addEventListener('click', function () {
-            console.log('box2 clicked bubbling addEventListener');
-        }, false);
-        box3.addEventListener('click', function () {
-            console.log('box3 clicked bubbling addEventListener');
-        }, false);
     </script>
 </body>
 

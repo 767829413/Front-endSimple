@@ -5,33 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            float: left;
+            border: 1px solid #000;
+            margin-right: 10px;
+        }
+    </style>
 </head>
 
 <body>
-    <div id="box">
-        <p>AAAAA</p>
-        <p id="para">BBBBB</p>
-        <p>CCCCC</p>
-    </div>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
 
     <script>
-        var box = document.getElementById('box');
-        var para = document.getElementById('para');
+        function setColorRed() {
+            this.style.backgroundColor = 'red';
+        }
 
-        console.log(box.childNodes);
-        console.log(box.children);
-        console.log('--------------------------------');
-        console.log(box.firstChild);
-        console.log(box.firstChild.nodeType);
-        console.log('--------------');
-        console.log(box.firstElementChild);
-        console.log(box.firstElementChild.nodeType);
-        console.log('--------------------------------');
-        console.log(para.parentNode);
-        console.log(para.parentElement);
-        console.log('--------------------------------');
-        console.log(para.previousSibling);
-        console.log(para.previousElementSibling);
+        function setColorRed1() {
+            var self = this;
+            setTimeout(function () {
+                self.style.backgroundColor = 'red';
+            }, 2000);
+        }
+
+        var box1 = document.getElementById("box1");
+        var box2 = document.getElementById("box2");
+        var box3 = document.getElementById("box3");
+
+        box1.onclick = setColorRed1;
+        box2.onclick = setColorRed1;
+        box3.onclick = setColorRed1;
     </script>
 </body>
 

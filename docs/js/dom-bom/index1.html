@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 300px;
+            height: 200px;
+        }
+
+        /* #box1 {
+            background-color: orange;
+        }
+
+        #box2 {
+            background-color: green;
+        } */
+
+        /* td {
+            width: 85px;
+            height: 30px;
+            border: 1px solid black;
+        } */
+
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div id="box">
+        <p>段落1</p>
+        <p>段落2</p>
+        <p>段落3</p>
+    </div> -->
+
+    <!-- <table id="mytable"></table>-->
+
+    <!-- <div id="box1">
+        <p id="para1">我是box1的段落p1</p>
+        <p id="para2">我是box1的段落p2</p>
+        <p id="para3">tttttttttttt</p>
+    </div>
+
+    <div id="box2">
+        <p>我是box2的段落p</p>
+    </div> -->
+
+    <!-- <div id="box1">
+        <ul>
+            <li>牛奶</li>
+            <li>咖啡</li>
+            <li>可乐</li>
+        </ul>
+    </div>
+    <div id="box2">
+    </div> -->
+
+    <!-- <img id="pic"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8EFM9U2y4SD4inBGnqRR5xZo0vMCyLx2OBA&usqp=CAU"
+        alt="">
+
+    <a href="https://www.baidu.com/" id="link">去百度</a> -->
+
+    <div id="box"></div>
+
+
+
+    <script>
+        // var oBox = document.getElementById('box');
+        // oBox.innerHTML = '<ul><li>a</li><li>b</li></ul>';
+        // oBox.innerText = '<ul><li>a</li><li>b</li></ul>';
+
+        // var box = document.getElementById('box');
+        // var oPs = box.getElementsByTagName('p');
+        // var newP1 = document.createElement('p');
+        // var newP2 = document.createElement('p');
+        // newP1.innerText = '新节点p1';
+        // newP2.innerText = '新节点p2';
+        // box.appendChild(newP1);
+        // box.insertBefore(newP2, oPs[0])
+
+        // var t = document.getElementById('mytable');
+        // for (var i = 1; i < 10; i++) {
+        //     var tr = document.createElement('tr');
+        //     for (var j = 1; j <= i; j++) {
+        //         var td = document.createElement('td');
+        //         td.innerText = i.toString() + ' * ' + j.toString() + ' = ' + (i * j).toString();
+        //         tr.appendChild(td);
+        //     }
+        //     t.appendChild(tr);
+        // }
+
+        // var box1 = document.getElementById('box1');
+        // var box2 = document.getElementById('box2');
+        // var box2Ps = box2.getElementsByTagName('p');
+        // var para1 = document.getElementById('para1');
+        // var para2 = document.getElementById('para2');
+        // var para3 = document.getElementById('para3');
+        // box2.appendChild(para1);
+        // box2.insertBefore(para2, box2Ps[0]);
+        // box1.removeChild(para3);
+
+        // var box1 = document.getElementById('box1');
+        // var box2 = document.getElementById('box2');
+        // var ulBox1 = box1.getElementsByTagName('ul')[0];
+        // var newUl1 = ulBox1.cloneNode();
+        // var newUl2 = ulBox1.cloneNode(true);
+        // box2.appendChild(newUl1);
+        // box2.appendChild(newUl2);
+
+        // var oBox = document.getElementById('box');
+        // oBox.style.background = 'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8EFM9U2y4SD4inBGnqRR5xZo0vMCyLx2OBA&usqp=CAU)';
+        // oBox.style.backgroundSize = 'contain';
+
+        // var pic = document.getElementById('pic');
+        // var link = document.getElementById('link');
+        // pic.src = 'https://pic1.zhimg.com/v2-a0b618120eae9350cf4c8b87d22a8b1d_l.jpg?source=1940ef5c';
+        // link.href = 'https://www.google.com/';
+        // link.innerText = '去谷歌';
+
+        var oBox = document.getElementById('box');
+        box.setAttribute('data-n', 10);
+
+        console.log(box.getAttribute('data-n'));
+        console.log(oBox.nodeType);
+
+    </script>
+</body>
+
+</html>

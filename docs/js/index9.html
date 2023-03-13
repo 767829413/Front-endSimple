@@ -5,49 +5,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        #box {
-            width: 200px;
-            height: 200px;
-            background-color: blueviolet;
-            margin: 50px;
-            padding: 50px;
-        }
-
-        body {
-            height: 2000px;
-        }
-
-        #info {
-            font-size: 30px;
-        }
-
-        #box p {
-            width: 50px;
-            height: 50px;
-            background-color: orange;
-        }
-    </style>
 </head>
 
 <body>
-    <div id="box">
-        <p></p>
-    </div>
-    <div id="info"></div>
-
     <script>
-        var box = document.getElementById("box");
-        var info = document.getElementById("info");
+        function People(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+        }
+        // 把方法写在原型上
+        People.prototype.sayHello = function () {
+            console.log('我的名字是' + this.name + ',今年' + this.age + '岁' + ',是一个' + this.sex);
+        }
+        People.prototype.sleep = function () {
+            console.log(this.name + '已经睡着了zzzzzzzz');
+        }
 
-        box.onmousemove = function (e) {
-            info.innerHTML = 'offsetX/Y: ' + e.offsetX + ' , ' + e.offsetY + '<br>' + 'clientX/Y: ' + e.clientX + ' , ' + e.clientY + '<br>' + 'pageX/Y: ' + e.pageX + ' , ' + e.pageY;
-        };
+        function Student(name, age, sex, school, studentNumber) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+            this.school = school;
+            this.studentNumber = studentNumber;
+        }
+        // 利用原型链实现继承
+        Student.prototype = new People();
+
+        Student.prototype.study = function () {
+            console.log(this.name + '正在学习');
+        }
+        Student.prototype.exam = function () {
+            console.log(this.name + '正在考试');
+        }
+        People.prototype.sayHello = function () {
+            console.log('hahahhahahahaha,我的名字是' + this.name + ',今年' + this.age + '岁' + ',是一个' + this.sex);
+        }
+
+        var zhangsan = new Student('张三', 18, '男生', '临淄高中', 11806);
+        zhangsan.sayHello();
+        zhangsan.sleep();
+        zhangsan.study();
+        zhangsan.exam();
     </script>
 </body>
 

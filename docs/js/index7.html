@@ -8,46 +8,24 @@
 </head>
 
 <body>
-    <form id="myform" action="">
-        <p>
-            Name:
-            <input type="text" name="nameF">
-        </p>
-        <p>
-            Age:
-            <input type="text" name="ageF">
-        </p>
-        <input type="submit">
-        <input type="reset">
-    </form>
-
     <script>
-        var myform = document.getElementById("myform");
+        function People(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+            // this.sayHello = function () {
+            //     console.log('我的名字是' + this.name + ',今年' + this.age + '岁' + ',是一个' + this.sex);
+            // };
+        }
+        // 把方法写在原型上
+        People.prototype.sayHello = function () {
+            console.log('我的名字是' + this.name + ',今年' + this.age + '岁' + ',是一个' + this.sex);
+        }
 
-        myform.nameF.oninput = function () {
-            console.log('oninput');
-        };
-
-        myform.nameF.onchange = function () {
-            console.log('onchange');
-        };
-
-        myform.nameF.onfocus = function () {
-            console.log('onfocus');
-        };
-
-        myform.nameF.onblur = function () {
-            console.log('onblur');
-        };
-
-        myform.onsubmit = function () {
-            alert('onsubmit');
-        };
-
-        myform.onreset = function () {
-            alert('onreset');
-        };
-    </script>
+        var xiaoming = new People('xiaoming', 12, '男生');
+        var xiaohong = new People('xiaohong', 15, '女生');
+        console.log(xiaoming.sayHello == xiaohong.sayHello);
+        console.log(xiaoming.sayHello === xiaohong.sayHello);
 
     </script>
 </body>

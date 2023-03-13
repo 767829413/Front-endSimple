@@ -8,79 +8,26 @@
 </head>
 
 <body>
-    <div id="box">
-        <p id="fpara">11111111111</p>
-        <p>AAAAA</p>
-        <p id="para">BBBBB</p>
-        <p>CCCCC</p>
-    </div>
-
     <script>
-        var box = document.getElementById('box');
-        var para = document.getElementById('para');
-        var fpara = document.getElementById('fpara');
-
-        // 兼容IE6,获取所有子元素节点
-        function getChildren(node) {
-            var children = [];
-
-            for (var i = 0; i < node.children.length; i++) {
-                var child = node.children[i];
-                if (child.nodeType == 1) {
-                    children.push(child);
-                }
-            }
-            return children;
+        function sum() {
+            alert(this.c + this.m + this.e);
         }
 
-        console.log(getChildren(box));
-
-        // 兼容IE6,获取所有元素前一个兄弟节点
-        function getElementPrevSibling(node) {
-            var pre = node.previousSibling;
-
-            while (pre != null) {
-                if (pre.nodeType == 1) {
-                    return pre;
-                }
-                pre = pre.previousSibling
-            }
-            return pre;
+        function sum1(a, b) {
+            alert(this.c + this.m + this.e + a + b);
         }
 
-        console.log(getElementPrevSibling(para));
-        console.log(getElementPrevSibling(fpara));
+        var xiaoming = {
+            c: 100,
+            m: 90,
+            e: 80,
+        };
 
-        function getElementAllSibling(node) {
-            var result = [];
+        // sum.call(xiaoming);
+        // sum.apply(xiaoming);
+        sum1.call(xiaoming, 1000, 1000);
+        sum1.apply(xiaoming, [1000, 1000]);
 
-            var pre = node.previousSibling;
-            var next = node.nextSibling;
-
-            var fn = function (n, flag = true) {
-                while (n != null) {
-                    if (n.nodeType == 1) {
-                        if (flag) {
-                            result.unshift(n);
-                        } else {
-                            result.push(n);
-                        }
-                    }
-                    if (flag) {
-                        n = n.previousSibling;
-                    } else {
-                        n = n.nextSibling;
-                    }
-                }
-            };
-
-            fn(pre);
-            fn(next, false);
-
-            return result;
-        }
-
-        console.log(getElementAllSibling(para));
     </script>
 </body>
 

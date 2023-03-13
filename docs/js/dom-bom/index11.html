@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: gold;
+        }
+
+        body {
+            height: 1000px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="field">
+    <br><br><br>
+    <div id="box"></div>
+    <h1 id="info"></h1>
+    <script>
+        var field = document.getElementById("field");
+        var box = document.getElementById("box");
+        var info = document.getElementById("info");
+
+        field.onkeypress = function (e) {
+            // 根据字符码判断
+            // 0-9: 48~57 a-z: 97~122
+            if (!((e.charCode >= 48 && e.charCode <= 57) || (e.charCode >= 97 && e.charCode <= 122))) {
+                e.preventDefault();
+            }
+        };
+
+        var a = 0;
+
+        box.onmousewheel = function (e) {
+            // 阻止默认事件,当用户在盒子里滚动时,不要让页面同时滚动
+            e.preventDefault();
+            if (e.deltaY > 0) {
+                // 向下
+                a--;
+            } else {
+                a++;
+            }
+            info.innerText = a;
+        }
+
+    </script>
+</body>
+
+</html>

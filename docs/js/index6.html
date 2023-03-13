@@ -8,23 +8,43 @@
 </head>
 
 <body>
-    Name:
-    <input type="text" id="name">
-
     <script>
-        var name1 = document.getElementById("name");
+        function sum(a, b) {
+            return a + b;
+        }
 
-        name1.onkeydown=function(){
-            console.log('onkeydown');
-        };
+        console.log(sum.prototype);
+        console.log(typeof sum.prototype);
+        console.log(sum.prototype.constructor === sum);
 
-        name1.onkeypress = function () {
-            console.log('onkeypress');
-        };
+        console.log('--------------------------------');
 
-        name1.onkeyup = function () {
-            console.log('onkeyup');
-        };
+        function People(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+            this.sayHello = function () {
+                console.log('我的名字是' + this.name + ',今年' + this.age + '岁' + ',是一个' + this.sex);
+            };
+        }
+        People.prototype.nationality = 'china';
+        var xiaoming = new People('xiaoming', 12, '男生');
+        xiaoming.nationality = 'US';
+        var xiaohong = new People('xiaohong', 15, '女生');
+        // 构造函数的prototype是实例的原型
+        console.log(xiaohong.__proto__ === People.prototype);
+        console.log(xiaohong.nationality);
+        console.log(xiaoming.nationality);
+        console.log(xiaoming.nationality);
+
+        // hasOwnProperty是不是自己拥有,而不是原型链超找的
+        console.log(xiaoming.hasOwnProperty('nationality'));
+        console.log(xiaohong.hasOwnProperty('nationality'));
+
+        // 能不能访问属性
+        console.log('nationality' in xiaoming);
+        console.log('nationality' in xiaohong);
+
     </script>
 </body>
 

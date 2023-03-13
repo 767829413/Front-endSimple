@@ -5,46 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        div {
-            width: 100px;
-            height: 100px;
-            background-color: red;
-        }
-    </style>
 </head>
 
 <body>
-    <div id="box"></div>
     <script>
-        var oBox = document.getElementById("box");
-        oBox.onclick = function() {
-            console.log('onclick');
-        };
+        function build() {
+            this.a = 10;
+            this.b = 10;
+        }
 
-        oBox.ondblclick = function() {
-            console.log('ondblclick');
-        };
+        var obj = new build();
+        console.log(obj);
 
-        oBox.onmousedown = function() {
-            console.log('onmousedown');
-        };
+        console.log('-----------------------');
 
-        oBox.onmouseup = function () {
-            console.log('onmouseup');
-        };
+        function People(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+            this.sayHello = function () {
+                console.log('我的名字是' + this.name + ',今年' + this.age + '岁' + ',是一个' + this.sex);
+            };
+        }
 
-        oBox.onmouseenter = function () {
-            console.log('onmouseenter');
-        };
-
-        oBox.onmouseleave = function () {
-            console.log('onmouseleave');
-        };
-
-        oBox.onmousemove = function () {
-            console.log('onmousemove');
-        };
+        var xiaoming = new People('xiaoming', 12, '男生');
+        var xiaohong = new People('xiaohong', 15, '女生');
+        xiaoming.sayHello();
+        xiaohong.sayHello();
+        
     </script>
 </body>
 

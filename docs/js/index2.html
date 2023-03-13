@@ -5,44 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script>
-        // 给window对象添加onload事件监听,onload表示页面加载完成
-        window.onload = function () {
-            var box1 = document.getElementById('box1');
-            var box2 = document.getElementById('box2');
-            var boxs = document.getElementsByTagName('div');
-            var boxs1 = document.getElementsByClassName('box');
-            var theP1 = document.querySelector('#box3 .spec');
-            var theP2 = document.querySelector('#box3 p:nth-child(1)');
-            var thePs = document.querySelectorAll('#box3 p');
-
-            console.log(box1);
-            console.log('----------------------------------------');
-            console.log(box2);
-            console.log('----------------------------------------');
-            console.log(boxs);
-            console.log('----------------------------------------');
-            console.log(boxs1);
-            console.log('----------------------------------------');
-            console.log(theP1);
-            console.log('----------------------------------------');
-            console.log(theP2);
-            console.log('----------------------------------------');
-            console.log(thePs);
-        };
-    </script>
 </head>
 
 <body>
-
-
-    <div id="box1" class="box">box1</div>
-    <div id="box2" class="box">box2</div>
-    <div id="box3" class="box">
-        <p>qqqqqqqq1111111111</p>
-        <p class="spec">qqqqqqqq2222222222</p>
-        <p>qqqqqqqq3333333333</p>
-    </div>
+    <script>
+        var obj = {
+            a: 1,
+            b: 2,
+            fn: function () {
+                console.log(this.a + this.b);
+                console.log(obj == this);
+            }
+        };
+        var a = 10;
+        var b = 10;
+        var fn = obj.fn;
+        fn();
+    </script>
 </body>
 
 </html>

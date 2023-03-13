@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <script>
+        var oBox = document.getElementById("box");
+        oBox.onclick = function() {
+            console.log('onclick');
+        };
+
+        oBox.ondblclick = function() {
+            console.log('ondblclick');
+        };
+
+        oBox.onmousedown = function() {
+            console.log('onmousedown');
+        };
+
+        oBox.onmouseup = function () {
+            console.log('onmouseup');
+        };
+
+        oBox.onmouseenter = function () {
+            console.log('onmouseenter');
+        };
+
+        oBox.onmouseleave = function () {
+            console.log('onmouseleave');
+        };
+
+        oBox.onmousemove = function () {
+            console.log('onmousemove');
+        };
+    </script>
+</body>
+
+</html>

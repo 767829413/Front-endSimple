@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+        <p>AAAAA</p>
+        <p id="para">BBBBB</p>
+        <p>CCCCC</p>
+    </div>
+
+    <script>
+        var box = document.getElementById('box');
+        var para = document.getElementById('para');
+
+        console.log(box.childNodes);
+        console.log(box.children);
+        console.log('--------------------------------');
+        console.log(box.firstChild);
+        console.log(box.firstChild.nodeType);
+        console.log('--------------');
+        console.log(box.firstElementChild);
+        console.log(box.firstElementChild.nodeType);
+        console.log('--------------------------------');
+        console.log(para.parentNode);
+        console.log(para.parentElement);
+        console.log('--------------------------------');
+        console.log(para.previousSibling);
+        console.log(para.previousElementSibling);
+    </script>
+</body>
+
+</html>

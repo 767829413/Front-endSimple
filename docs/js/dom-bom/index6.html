@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Name:
+    <input type="text" id="name">
+
+    <script>
+        var name1 = document.getElementById("name");
+
+        name1.onkeydown=function(){
+            console.log('onkeydown');
+        };
+
+        name1.onkeypress = function () {
+            console.log('onkeypress');
+        };
+
+        name1.onkeyup = function () {
+            console.log('onkeyup');
+        };
+    </script>
+</body>
+
+</html>
