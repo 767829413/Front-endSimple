@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log([1] instanceof Array);
+        console.log([] instanceof Array);
+        var arr = new Array(5);
+        console.log(arr);
+        console.log(arr.length);
+        console.log('-------------------');
+        function fun() { };
+        function add(a, b) { return a + b };
+        console.log(fun instanceof Function);
+        console.log(add instanceof Function);
+        var sub = new Function('a', 'b', 'return a - b');
+        console.log(sub(100, 10));
+        console.log('-------------------');
+        console.log({} instanceof Object);
+        console.log({ a: 2 } instanceof Object);
+        var o = new Object();
+        console.log(o);
+        o.a = 100;
+        o.c = 100;
+        console.log(o);
+        console.log('-------------------');
+        Array.prototype.qiuhe = function () {
+            var sum = 0;
+            for (var i = 0; i < this.length; i++) {
+                sum += this[i];
+            }
+            return sum;
+        }
+
+        var arr = [1, 2, 3];
+        console.log(arr.qiuhe());
+        console.log('-------------------');
+        var o = new Number(3);
+        var n = 3;
+        console.log(typeof o);
+        console.log(typeof n);
+        console.log(o);
+        console.log(o + n);
+        var s = new String('aasas');
+        console.log(s);
+        var b = new Boolean(true);
+        console.log(b);
+    </script>
+</body>
+
+</html>

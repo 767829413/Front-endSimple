@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 原型继承 (IE9以上支持)
+        var obj1 = {
+            a: 100,
+            b: 100,
+            c: 100,
+            test: function () {
+                console.log(this.a + obj2.b);
+            }
+        };
+
+        var obj2 = Object.create(obj1, {
+            d: {
+                value: 99
+            },
+            a: {
+                value: 1
+            }
+        })
+        console.log(obj2.__proto__ === obj1);
+        console.log(obj2.a, obj2.b, obj2.c);
+        console.log(obj2.d);
+        obj2.test();
+        console.log('-------------');
+        // 低版本兼容 道格拉斯*克罗克福德 2006发明,以object为原型创建对象
+        function object(o) {
+            // 创建一个临时构造函数
+            function F() { };
+            // 这里临时构造函数的prototype指向o,这样以来new出来的对象的__proto__就指向o了
+            F.prototype = o;
+            return new F();
+        }
+
+        var o1 = {
+            a: 56, b: 22
+        };
+
+        var o2 = object(o1);
+        console.log(o2.__proto__ === o1);
+        console.log(obj2.a, obj2.b);
+    </script>
+</body>
+
+</html>

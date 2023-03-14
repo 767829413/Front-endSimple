@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = new Number(123);
+        var b = new String('adc');
+        var c = new Boolean(true);
+
+        console.log(a);
+        console.log(typeof a);
+        console.log(b);
+        console.log(typeof b);
+        console.log(c);
+        console.log(typeof c);
+
+        console.log(a + 5);
+        console.log(b.slice(0, 1));
+        console.log(c && true);
+
+        var d = 456;
+        console.log(d.__proto__ == Number.prototype);
+        var e = '456';
+        console.log(e.__proto__ == String.prototype);
+    </script>
+</body>
+
+</html>

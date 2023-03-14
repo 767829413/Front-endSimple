@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 寄生式继承 (方法没有写到 prototype)
+        var o1 = {
+            name: '小明',
+            age: 12,
+            sex: '男',
+        };
+
+        function f(o) {
+            // 以o为原型创建新对象
+            var p = Object.create(o);
+            // 补充方法
+            p.sayHello = function () {
+                console.log('我是' + this.name + ',今年已经' + this.age + ',是个' + this.sex + '孩子');
+            }
+            return p;
+        }
+
+        var o2 = f(o1);
+        o2.sayHello();
+    </script>
+</body>
+
+</html>

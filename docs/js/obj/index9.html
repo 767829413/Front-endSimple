@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 单原型链继承 (子类构造繁琐,父类引用类型共享)
+        function People(name, age, sex) {
+            this.arr = [1, 2, 3]
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+        }
+        // 把方法写在原型上
+        People.prototype.sayHello = function () {
+            console.log('我的名字是' + this.name + ',今年' + this.age + '岁' + ',是一个' + this.sex);
+        }
+        People.prototype.sleep = function () {
+            console.log(this.name + '已经睡着了zzzzzzzz');
+        }
+
+        function Student(name, age, sex, school, studentNumber) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+            this.school = school;
+            this.studentNumber = studentNumber;
+        }
+        // 利用原型链实现继承
+        Student.prototype = new People();
+
+        Student.prototype.study = function () {
+            console.log(this.name + '正在学习');
+        }
+        Student.prototype.exam = function () {
+            console.log(this.name + '正在考试');
+        }
+        People.prototype.sayHello = function () {
+            console.log('hahahhahahahaha,我的名字是' + this.name + ',今年' + this.age + '岁' + ',是一个' + this.sex);
+        }
+
+        var zhangsan = new Student('张三', 18, '男生', '临淄高中', 11806);
+        var lisi = new Student('李四', 17, '男生', '临鸡高中', 14406);
+        console.log(zhangsan.arr === lisi.arr);
+        lisi.arr.push(100);
+        console.log(zhangsan.arr);
+        console.log(lisi.arr);
+        lisi.study();
+        lisi.exam();
+        lisi.sayHello();
+        lisi.sleep();
+    </script>
+</body>
+
+</html>

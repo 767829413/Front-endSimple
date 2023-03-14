@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log([1, 2].__proto__ === Array.prototype);
+        console.log([1, 2].__proto__.__proto__ === Object.prototype);
+        console.log([] instanceof Array);
+        console.log([] instanceof Object);
+        console.log(Object.prototype.__proto__);
+        console.log('---------------');
+        console.log(Object.__proto__ === Function.prototype);
+        console.log(Function.__proto__ === Function.prototype);
+        console.log(Function instanceof Object);
+        console.log(Object instanceof Object);
+        console.log(Object instanceof Function);
+        console.log(Function instanceof Function);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>2023年高考倒计时</h1>
+    <h2 id="info"></h2>
+    <script>
+        var info = document.getElementById('info');
+
+        setInterval(function () {
+            // 现在日期
+            var nd = new Date();
+            // 目标日期
+            var td = new Date(2023, 5, 7);
+
+            var diff = td - nd;
+
+            // 换算为多少天,除以一天总毫秒数,取整就是天数
+            var day = parseInt(diff / (1000 * 60 * 60 * 24));
+            // 换算为多少小时呢?差的总毫秒数与1天的毫秒数相除的余数,就是零头的毫秒数,再除以一小时的毫秒数就是小时
+            var hours = parseInt((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = parseInt((diff % (1000 * 60 * 60) / (1000 * 60)));
+            var seconds = parseInt((diff % (1000 * 60) / 1000));
+            var seconds1 = parseInt((diff % (1000 * 60 * 60) % (1000 * 60)) / 1000);
+            // console.log(day);
+            // console.log(hours);
+            // console.log(minutes);
+            // console.log(seconds);
+            // console.log(seconds1);
+            info.innerText = '距离高考还剩' + day + '天' + ',' + minutes + '分钟,' + seconds + '秒';
+        }, 1000);
+
+
+    </script>
+</body>
+
+</html>

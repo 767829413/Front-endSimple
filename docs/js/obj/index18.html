@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function People(name, age, sex) { }
+        function Student(name, age, sex, school, studentNumber) { }
+
+        Student.prototype = new People();
+
+        var xiaoming = new Student();
+
+        console.log(xiaoming instanceof People);
+        console.log(xiaoming instanceof Student);
+    </script>
+</body>
+
+</html>
