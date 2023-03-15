@@ -254,14 +254,25 @@
 
 .banner {
     position: relative;
+    overflow: hidden;
 }
 
-.banner img {
+.banner .carousel_list {
+    width: 600%;
+    overflow: hidden;
+    /* translateX中百分数表示相对于它本身的宽度的多少倍 */
+    /* transform: translateX(); */
+    transition: transform 0.5s ease 0s;
+}
+
+.banner .carousel_list li {
+    float: left;
+    width: 16.666%;
+}
+
+.banner .carousel_list li img {
     width: 100%;
-    /* 限制最小宽度: min-width */
-    min-width: 1152px;
-    /* 图片可能和盒子底部产生一些缝隙,可以使用 */
-    /* 可以使缝隙消失,表示垂直居中 */
+    /* 处理白边 */
     vertical-align: middle;
 }
 
