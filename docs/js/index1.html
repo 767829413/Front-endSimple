@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var str = 'aa1236sd4517sdsdf789';
+        var reg = /\d+/g;
+        while (true) {
+            var res = reg.exec(str)
+            if (res == null) {
+                break;
+            }
+            console.log(res[0]);
+        }
+        console.log('---------------');
+        console.log(str.search(reg));
+        console.log(str.match(reg));
+        console.log(str);
+        console.log(str.replace(/[a-z]+/g, '-'));
+        console.log(str.split(/[a-z]+/g));
+        console.log(str.split(/\d+/g));
+    </script>
+</body>
+
+</html>

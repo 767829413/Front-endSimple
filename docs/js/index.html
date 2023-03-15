@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var reg = /^\d{6}$/
+
+        var s1 = '123456';
+        var s2 = '1234567';
+        var s3 = '123bb';
+
+        console.log(reg.test(s1));
+        console.log(reg.test(s2));
+        console.log(reg.test(s3));
+        var reg1 = new RegExp('^\\d{6}$');
+        console.log(reg1.test(s1));
+        console.log(reg1.test(s2));
+        console.log(reg1.test(s3));
+
+        console.log(reg);
+        console.log(typeof reg);
+        console.log(reg1);
+        console.log(typeof reg1);
+        console.log(/^\d{6}$/ == /^\d{6}$/);
+
+        console.log('某快递公司运单号形式是这样的: 123-4567-899，请使用正则表达式检查某字符串是否符合此格式');
+        var reg2 = /^\d{3}-\d{3}-\d{3}$/;
+        console.log(reg2.test('123-456-899'));
+        console.log(reg2.test('1234567-899'));
+        console.log(reg2.test('1o2-4567-899'));
+        console.log('某产品的验证秘钥形式是这样的: ???-???-???，其中?表示字母数字或者下划线，请使用正则表达式检查某字符串是否符合此格式');
+        var reg3 = /^\w{3}-\w{3}-\w{3}$/;
+        console.log(reg3.test('d_D-q56-799'));
+        console.log(reg3.test('12!-467-899'));
+        console.log(reg3.test('1o2-4567-899'));
+        console.log('某产品批号形式为: 123.45^67#89，请使用正则表达式检查某字符串是否符合此格式');
+        var reg4 = /^\d{3}\.\d{2}\^\d{2}\#\d{2}$/;
+        console.log(reg4.test('123.45^67#89'));
+        console.log(reg4.test('12!-467-899'));
+        console.log(reg4.test('123.45^67#899'));
+        console.log(reg4.test('1o2.45^67#89'));
+        console.log('比如某学校的学号规定:第1位是一个字母，b表示本科生y表示研究生，后面是7位数字，');
+        var reg5 = /^[by]\d{7}$/
+        console.log(reg5.test('y1234567'));
+        console.log(reg5.test('x1234567'));
+        console.log('请验证某字符串是否是5位字母，大小写均可');
+        var reg6 = /^[a-zA-Z]{5}$/
+        console.log(reg6.test('aAder'));
+        console.log(reg6.test('ax456'));
+        console.log('请验证某字符串是否是5位，且仅有小写字母、点构成');
+        var reg7 = /^[a-z\.]{5}$/
+        console.log(reg7.test('a.wsd'));
+        console.log(reg7.test('A1234'));
+        console.log('请验证某字符串是否是4位小写字母，且最后一位不能是m字母');
+        var reg8 = /^[a-z]{3}[a-ln-z]$/
+        console.log(reg8.test('xcvn'));
+        console.log(reg8.test('xcvm'));
+        console.log('请验证字符串是否符合手机号码的规则: 11位数字并且肯定以1开头');
+        var reg9 = /^1[0-9]{10}$/
+        console.log(reg9.test('12345678911'));
+        console.log(reg9.test('22345678911'));
+        console.log('请验证某字符串是否是这样的:以字母开头，中间是任意位数字(最少1位) 构成，并以字母结尾');
+        var reg10 = /^[a-zA-Z]\d+[a-zA-Z]$/
+        console.log(reg10.test('x213123123123m'));
+        console.log(reg10.test('xcvm'));
+        console.log('请验证某字符串是否符合网址规则: 以www.开头,中间是任意位的字符(字母数字下划线)，最后以.com结尾,也可以是.com.cn结尾');
+        var reg11 = /^www\.\w{1,}\.com(\.cn){0,}$/
+        console.log(reg11.test('www.ccc.com.cn'));
+        console.log(reg11.test('www.ccc.com'));
+        console.log(reg11.test('www..com'));
+        console.log(reg11.test('asdas'));
+        console.log(reg11.test('www.asdas.cn'));
+    </script>
+</body>
+
+</html>
