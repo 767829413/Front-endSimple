@@ -197,6 +197,10 @@
     width: 155px;
 }
 
+.site-head .main-nav ul li.have-menu .sdly-menu {
+    width: 118px;
+}
+
 .site-head .main-nav ul li.have-menu .menu dl dd a {
     font-size: 12px;
     color: #1C1F21;
@@ -315,7 +319,7 @@
     border-bottom: none;
 }
 
-.banner .center-wrap .banner-nav ul li:hover {
+.banner .center-wrap .banner-nav>ul>li:hover {
     background-color: rgba(0, 0, 0, .5);
 }
 
@@ -334,21 +338,25 @@
     left: -38px;
 }
 
-.banner .center-wrap .left-btn:hover {
-    /* 透明度 */
-    opacity: 0.6;
-}
-
 .banner .center-wrap .right-btn {
     background-position: -21px -29px;
     right: -38px;
 }
 
+.banner .center-wrap .left-btn:hover,
 .banner .center-wrap .right-btn:hover {
     /* 透明度 */
-    opacity: 0.6;
+    opacity: 0.8;
 }
 
+.banner .center-wrap .banner-nav {
+    width: 652px;
+    height: 100%;
+    position: relative;
+}
+.banner .center-wrap .banner-nav>ul{
+    height: 100%;
+}
 .banner .center-wrap .banner-nav>ul>li {
     position: relative;
 }
@@ -386,27 +394,27 @@
     left: 10px;
 }
 
-.banner .center-wrap .banner-nav>ul>li.hot-start::before {
+.banner .center-wrap .banner-nav>ul>li.hot::before {
     background-position: -29px -399px;
 }
 
-.banner .center-wrap .banner-nav>ul>li.hk-inner::before {
+.banner .center-wrap .banner-nav>ul>li.hk::before {
     background-position: -28px -217px;
 }
 
-.banner .center-wrap .banner-nav>ul>li.jp-out::before {
+.banner .center-wrap .banner-nav>ul>li.jp::before {
     background-position: -25px -171px;
 }
 
-.banner .center-wrap .banner-nav>ul>li.sa-out::before {
+.banner .center-wrap .banner-nav>ul>li.sa::before {
     background-position: -28px -262px;
 }
 
-.banner .center-wrap .banner-nav>ul>li.eu-out::before {
+.banner .center-wrap .banner-nav>ul>li.eu::before {
     background-position: -29px -351px;
 }
 
-.banner .center-wrap .banner-nav>ul>li.an-out::before {
+.banner .center-wrap .banner-nav>ul>li.au::before {
     background-position: -28px -305px;
 }
 
@@ -424,7 +432,6 @@
     background-color: rgba(0, 0, 0, .63);
     color: #FFFFFF;
     padding: 16px;
-
     /* 加上box-sizing属性之后，height: 100%; 就是盒子的总高度了 */
     /* 就不需要减padding了，因为百分比怎么减padding呀？ */
     box-sizing: border-box;
@@ -452,6 +459,37 @@
 .banner .center-wrap .banner-nav .menus-box .menu dl dd {
     line-height: 22px;
     font-size: 14px;
+}
+
+.banner .circles {
+    width: 160px;
+    height: 20px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    margin-left: -75px;
+    z-index: 9999;
+}
+
+.banner .circles li {
+    float: left;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(24, 243, 188);
+    margin-right: 10px;
+    border-radius: 10px;
+    transition: all 0.5s ease 0s;
+    /* 鼠标指针变小手 */
+    cursor: pointer;
+}
+
+.banner .circles li:last-child {
+    margin-right: 0;
+}
+
+.banner .circles .current {
+    width: 40px;
+    background-color: #20BD9A;
 }
 
 .hot-ads {
@@ -1130,4 +1168,20 @@ footer .part-end .copyright {
 footer .part-end .copyright a {
     font-size: 14px;
     color: #FFFFFF;
+}
+
+.backtotop {
+    position: fixed;
+    bottom: 80px;
+    right: 80px;
+    width: 80px;
+    height: 80px;
+    background-color: rgba(226, 212, 212, 0.9);
+    font-size: 20px;
+    text-align: center;
+    padding-top: 12px;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: black;
+    display: none;
 }

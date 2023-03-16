@@ -200,6 +200,15 @@
                     </li>
                     <li class="have-menu">
                         <a href="">深度旅游</a>
+                        <div class="menu sdly-menu">
+                            <dl>
+                                <dt>全部</dt>
+                                <dd>
+                                    <a href="">CityWalk 特色长线</a>
+                                    <a href="">Q-Home</a>
+                                </dd>
+                            </dl>
+                        </div>
                     </li>
                     <li>
                         <a href="">私人定制</a>
@@ -219,7 +228,7 @@
     </header>
 
     <!-- banner -->
-    <section class="banner">
+    <section class="banner" id="banner">
         <ul id="carousel_list" class="carousel_list">
             <li>
                 <img src="../images/banner1.jpg" alt="">
@@ -237,13 +246,20 @@
                 <img src="../images/banner5.jpg" alt="">
             </li>
         </ul>
+        <ol class="circles" id="circles">
+            <li data-n="0" class="current"></li>
+            <li data-n="1"></li>
+            <li data-n="2"></li>
+            <li data-n="3"></li>
+            <li data-n="4"></li>
+        </ol>
 
         <div class="center-wrap">
             <a href="javascript:;" id="left-btn" class="btn left-btn" href=""></a>
             <a href="javascript:;" id="right-btn" class="btn right-btn" href=""></a>
-            <nav class="banner-nav">
-                <ul>
-                    <li class="hot-start">
+            <nav class="banner-nav" id="banner-nav">
+                <ul id="banner-nav-ul">
+                    <li class="hot" data-t="hot">
                         <dl>
                             <dt>热门出发地</dt>
                             <dd>
@@ -255,7 +271,7 @@
                             </dd>
                         </dl>
                     </li>
-                    <li class="hk-inner">
+                    <li class="hk" data-t="hk">
                         <dl>
                             <dt>港澳台 国内</dt>
                             <dd>
@@ -266,7 +282,7 @@
                             </dd>
                         </dl>
                     </li>
-                    <li class="jp-out">
+                    <li class="jp" data-t="jp">
                         <dl>
                             <dt>日本 韩国</dt>
                             <dd>
@@ -278,7 +294,7 @@
                             </dd>
                         </dl>
                     </li>
-                    <li class="sa-out">
+                    <li class="sa" data-t="sa">
                         <dl>
                             <dt>东南亚 南亚</dt>
                             <dd>
@@ -289,7 +305,7 @@
                             </dd>
                         </dl>
                     </li>
-                    <li class="eu-out">
+                    <li class="eu" data-t="eu">
                         <dl>
                             <dt>欧洲 美洲</dt>
                             <dd>
@@ -300,7 +316,7 @@
                             </dd>
                         </dl>
                     </li>
-                    <li class="an-out">
+                    <li class="au" data-t="au">
                         <dl>
                             <dt>澳新 中东非</dt>
                             <dd>
@@ -434,7 +450,7 @@
                             </dd>
                         </dl>
                     </div>
-                    <div class="menu" data-t="as">
+                    <div class="menu" data-t="sa">
                         <dl>
                             <dt>泰新马</dt>
                             <dd>
@@ -635,6 +651,10 @@
             </nav>
         </div>
     </section>
+
+    <!-- 加载js文件 -->
+    <script src="../js/carousel.js"></script>
+    <script src="../js/menu.js"></script>
 
     <!-- 热门广告 -->
     <section class="hot-ads clearfix">
@@ -1357,7 +1377,13 @@
             </div>
         </div>
     </footer>
-    <script src="../js/carousel.js"></script>
+
+    <!-- 返回顶部 -->
+    <a href="javascript:;" class="backtotop" id="backtotop">
+        返回<br>顶部
+    </a>
+    <!-- 加载js文件 -->
+    <script src="../js/backtotop.js"></script>
 </body>
 
 </html>
