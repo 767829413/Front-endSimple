@@ -1,11 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            padding: 50px 00 150px;
+        }
+
+        .btn {
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+            font-size: 80px;
+            cursor: pointer;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <button class="btn">0</button>
+    <button class="btn">1</button>
+    <button class="btn">2</button>
+    <script src="./let_const_var.js"></script>
+    <script>
+        var btns = document.querySelectorAll('.btn');
+        // 闭包
+        // for (var i = 0; i < btns.length; i++) {
+        //     (function(i){
+        //         btns[i].addEventListener('click', () => {
+        //         alert(i)
+        //     });
+        //     })(i);
+        // }
+        // 使用 let
+        for (let i = 0; i < btns.length; i++) {
+            btns[i].addEventListener('click', () => {
+                alert(i)
+            })
+        }
+    </script>
 </body>
+
 </html>
